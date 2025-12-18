@@ -166,7 +166,7 @@ BEGIN
         CASE
             WHEN UPPER(TRIM(gen)) IN ('F', 'FEMALE') THEN 'Female'
             WHEN UPPER(TRIM(gen)) IN ('M', 'MALE') THEN 'Male'
-            ELSE 'Unknown'
+            ELSE 'NaN'
         END
     FROM bronze.erp_cust_az12;
 
@@ -189,7 +189,7 @@ BEGIN
         CASE
             WHEN TRIM(cntry) = 'DE' THEN 'Germany'
             WHEN TRIM(cntry) IN ('US', 'USA') THEN 'United States'
-            WHEN TRIM(cntry) IS NULL OR TRIM(cntry) = '' THEN 'Unknown'
+            WHEN TRIM(cntry) IS NULL OR TRIM(cntry) = '' THEN 'NaN'
             ELSE TRIM(cntry)
         END
     FROM bronze.erp_loc_a101;
